@@ -137,7 +137,7 @@ var defaultStaticRanges = exports.defaultStaticRanges = createStaticRanges([{
 }]);
 
 var defaultInputRanges = exports.defaultInputRanges = [{
-  label: 'days up to today',
+  label: "Jours Précédents",
   range: function range(value) {
     return {
       startDate: (0, _addDays2.default)(defineds.startOfToday, (Math.max(Number(value), 1) - 1) * -1),
@@ -148,19 +148,5 @@ var defaultInputRanges = exports.defaultInputRanges = [{
     if (!(0, _isSameDay2.default)(range.endDate, defineds.endOfToday)) return '-';
     if (!range.startDate) return '∞';
     return (0, _differenceInCalendarDays2.default)(defineds.endOfToday, range.startDate) + 1;
-  }
-}, {
-  label: 'days starting today',
-  range: function range(value) {
-    var today = new Date();
-    return {
-      startDate: today,
-      endDate: (0, _addDays2.default)(today, Math.max(Number(value), 1) - 1)
-    };
-  },
-  getCurrentValue: function getCurrentValue(range) {
-    if (!(0, _isSameDay2.default)(range.startDate, defineds.startOfToday)) return '-';
-    if (!range.endDate) return '∞';
-    return (0, _differenceInCalendarDays2.default)(range.endDate, defineds.startOfToday) + 1;
   }
 }];
