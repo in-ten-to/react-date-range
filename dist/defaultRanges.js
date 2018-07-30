@@ -59,9 +59,9 @@ var dateOptions = { locale: _fr2.default };
 
 var defineds = {
   startOfWeek: (0, _startOfWeek2.default)(new Date(), dateOptions),
-  endOfWeek: (0, _endOfWeek2.default)(new Date()),
+  endOfWeek: (0, _endOfWeek2.default)(new Date() + 1, dateOptions),
   startOfLastWeek: (0, _startOfWeek2.default)((0, _addDays2.default)(new Date(), -7), dateOptions),
-  endOfLastWeek: (0, _endOfWeek2.default)((0, _addDays2.default)(new Date(), -7)),
+  endOfLastWeek: (0, _endOfWeek2.default)((0, _addDays2.default)(new Date() + 1, -7), dateOptions),
   startOfToday: (0, _startOfDay2.default)(new Date()),
   endOfToday: (0, _endOfDay2.default)(new Date()),
   startOfYesterday: (0, _startOfDay2.default)((0, _addDays2.default)(new Date(), -1)),
