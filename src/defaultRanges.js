@@ -11,10 +11,13 @@ import {
   differenceInCalendarDays,
 } from 'date-fns';
 
+import fr from 'date-fns/locale/fr';
+const dateOptions = { locale: fr };
+
 const defineds = {
-  startOfWeek: startOfWeek(new Date()),
+  startOfWeek: startOfWeek(new Date(), dateOptions),
   endOfWeek: endOfWeek(new Date()),
-  startOfLastWeek: startOfWeek(addDays(new Date(), -7)),
+  startOfLastWeek: startOfWeek(addDays(new Date(), -7), dateOptions),
   endOfLastWeek: endOfWeek(addDays(new Date(), -7)),
   startOfToday: startOfDay(new Date()),
   endOfToday: endOfDay(new Date()),
@@ -43,14 +46,14 @@ export function createStaticRanges(ranges) {
 
 export const defaultStaticRanges = createStaticRanges([
   {
-    label: 'Today',
+    label: "Aujourd'hui",
     range: () => ({
       startDate: defineds.startOfToday,
       endDate: defineds.endOfToday,
     }),
   },
   {
-    label: 'Yesterday',
+    label: 'Hier',
     range: () => ({
       startDate: defineds.startOfYesterday,
       endDate: defineds.endOfYesterday,
@@ -58,28 +61,28 @@ export const defaultStaticRanges = createStaticRanges([
   },
 
   {
-    label: 'This Week',
+    label: 'Cette semaine',
     range: () => ({
       startDate: defineds.startOfWeek,
       endDate: defineds.endOfWeek,
     }),
   },
   {
-    label: 'Last Week',
+    label: 'La semaine dernière',
     range: () => ({
       startDate: defineds.startOfLastWeek,
       endDate: defineds.endOfLastWeek,
     }),
   },
   {
-    label: 'This Month',
+    label: 'Ce mois-ci',
     range: () => ({
       startDate: defineds.startOfMonth,
       endDate: defineds.endOfMonth,
     }),
   },
   {
-    label: 'Last Month',
+    label: 'Le mois dernier',
     range: () => ({
       startDate: defineds.startOfLastMonth,
       endDate: defineds.endOfLastMonth,

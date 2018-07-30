@@ -49,12 +49,18 @@ var _addDays = require('date-fns/addDays');
 
 var _addDays2 = _interopRequireDefault(_addDays);
 
+var _fr = require('date-fns/locale/fr');
+
+var _fr2 = _interopRequireDefault(_fr);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var dateOptions = { locale: _fr2.default };
+
 var defineds = {
-  startOfWeek: (0, _startOfWeek2.default)(new Date()),
+  startOfWeek: (0, _startOfWeek2.default)(new Date(), dateOptions),
   endOfWeek: (0, _endOfWeek2.default)(new Date()),
-  startOfLastWeek: (0, _startOfWeek2.default)((0, _addDays2.default)(new Date(), -7)),
+  startOfLastWeek: (0, _startOfWeek2.default)((0, _addDays2.default)(new Date(), -7), dateOptions),
   endOfLastWeek: (0, _endOfWeek2.default)((0, _addDays2.default)(new Date(), -7)),
   startOfToday: (0, _startOfDay2.default)(new Date()),
   endOfToday: (0, _endOfDay2.default)(new Date()),
@@ -81,7 +87,7 @@ function createStaticRanges(ranges) {
 }
 
 var defaultStaticRanges = exports.defaultStaticRanges = createStaticRanges([{
-  label: 'Today',
+  label: "Aujourd'hui",
   range: function range() {
     return {
       startDate: defineds.startOfToday,
@@ -89,7 +95,7 @@ var defaultStaticRanges = exports.defaultStaticRanges = createStaticRanges([{
     };
   }
 }, {
-  label: 'Yesterday',
+  label: 'Hier',
   range: function range() {
     return {
       startDate: defineds.startOfYesterday,
@@ -97,7 +103,7 @@ var defaultStaticRanges = exports.defaultStaticRanges = createStaticRanges([{
     };
   }
 }, {
-  label: 'This Week',
+  label: 'Cette semaine',
   range: function range() {
     return {
       startDate: defineds.startOfWeek,
@@ -105,7 +111,7 @@ var defaultStaticRanges = exports.defaultStaticRanges = createStaticRanges([{
     };
   }
 }, {
-  label: 'Last Week',
+  label: 'La semaine dernière',
   range: function range() {
     return {
       startDate: defineds.startOfLastWeek,
@@ -113,7 +119,7 @@ var defaultStaticRanges = exports.defaultStaticRanges = createStaticRanges([{
     };
   }
 }, {
-  label: 'This Month',
+  label: 'Ce mois-ci',
   range: function range() {
     return {
       startDate: defineds.startOfMonth,
@@ -121,7 +127,7 @@ var defaultStaticRanges = exports.defaultStaticRanges = createStaticRanges([{
     };
   }
 }, {
-  label: 'Last Month',
+  label: 'Le mois dernier',
   range: function range() {
     return {
       startDate: defineds.startOfLastMonth,
