@@ -8,7 +8,6 @@ import {
   startOfWeek,
   endOfWeek,
   isSameDay,
-  differenceInCalendarDays,
 } from 'date-fns';
 
 import fr from 'date-fns/locale/fr';
@@ -67,7 +66,8 @@ export const defaultStaticRanges = createStaticRanges([
       startDate: defineds.startOfToday,
       endDate: defineds.lastSevenDays,
     }),
-  },{
+  },
+  {
     label: 'les 30 derniers jours',
     range: () => ({
       startDate: defineds.startOfToday,
@@ -103,20 +103,3 @@ export const defaultStaticRanges = createStaticRanges([
     }),
   },
 ]);
-
-export const defaultInputRanges = [
-  {
-    label: "Jours Précédents",
-    range(value) {
-      return {
-        startDate: addDays(defineds.startOfToday, (Math.max(Number(value), 1) - 1) * -1),
-        endDate: defineds.endOfToday,
-      };
-    },
-    getCurrentValue(range) {
-      if (!isSameDay(range.endDate, defineds.endOfToday)) return '-';
-      if (!range.startDate) return '∞';
-      return differenceInCalendarDays(defineds.endOfToday, range.startDate) + 1;
-    },
-  }
-];

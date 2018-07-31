@@ -3,15 +3,11 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.defaultInputRanges = exports.defaultStaticRanges = undefined;
+exports.defaultStaticRanges = undefined;
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 exports.createStaticRanges = createStaticRanges;
-
-var _differenceInCalendarDays = require('date-fns/differenceInCalendarDays');
-
-var _differenceInCalendarDays2 = _interopRequireDefault(_differenceInCalendarDays);
 
 var _isSameDay = require('date-fns/isSameDay');
 
@@ -153,18 +149,3 @@ var defaultStaticRanges = exports.defaultStaticRanges = createStaticRanges([{
     };
   }
 }]);
-
-var defaultInputRanges = exports.defaultInputRanges = [{
-  label: "Jours Précédents",
-  range: function range(value) {
-    return {
-      startDate: (0, _addDays2.default)(defineds.startOfToday, (Math.max(Number(value), 1) - 1) * -1),
-      endDate: defineds.endOfToday
-    };
-  },
-  getCurrentValue: function getCurrentValue(range) {
-    if (!(0, _isSameDay2.default)(range.endDate, defineds.endOfToday)) return '-';
-    if (!range.startDate) return '∞';
-    return (0, _differenceInCalendarDays2.default)(defineds.endOfToday, range.startDate) + 1;
-  }
-}];
