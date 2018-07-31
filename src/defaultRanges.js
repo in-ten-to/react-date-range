@@ -15,6 +15,8 @@ import fr from 'date-fns/locale/fr';
 const dateOptions = { locale: fr };
 
 const defineds = {
+  lastSevenDays: endOfDay(addDays(new Date(), -7)),
+  lastThirtyDays: endOfDay(addDays(new Date(), -30)),
   startOfWeek: startOfWeek(new Date(), dateOptions),
   endOfWeek: endOfWeek(new Date() + 1, dateOptions),
   startOfLastWeek: startOfWeek(addDays(new Date(), -7), dateOptions),
@@ -59,7 +61,19 @@ export const defaultStaticRanges = createStaticRanges([
       endDate: defineds.endOfYesterday,
     }),
   },
-
+  {
+    label: 'les 7 derniers jours',
+    range: () => ({
+      startDate: defineds.startOfToday,
+      endDate: defineds.lastSevenDays,
+    }),
+  },{
+    label: 'les 30 derniers jours',
+    range: () => ({
+      startDate: defineds.startOfToday,
+      endDate: defineds.lastThirtyDays,
+    }),
+  },
   {
     label: 'Cette semaine',
     range: () => ({
