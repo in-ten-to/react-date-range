@@ -8,6 +8,7 @@ import {
   startOfWeek,
   endOfWeek,
   isSameDay,
+  differenceInCalendarDays,
 } from 'date-fns';
 
 import fr from 'date-fns/locale/fr';
@@ -66,8 +67,7 @@ export const defaultStaticRanges = createStaticRanges([
       startDate: defineds.startOfToday,
       endDate: defineds.lastSevenDays,
     }),
-  },
-  {
+  },{
     label: 'les 30 derniers jours',
     range: () => ({
       startDate: defineds.startOfToday,
@@ -103,3 +103,5 @@ export const defaultStaticRanges = createStaticRanges([
     }),
   },
 ]);
+
+export const defaultInputRanges = [];
