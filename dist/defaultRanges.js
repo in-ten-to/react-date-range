@@ -9,10 +9,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 exports.createStaticRanges = createStaticRanges;
 
-var _differenceInCalendarDays = require('date-fns/differenceInCalendarDays');
-
-var _differenceInCalendarDays2 = _interopRequireDefault(_differenceInCalendarDays);
-
 var _isSameDay = require('date-fns/isSameDay');
 
 var _isSameDay2 = _interopRequireDefault(_isSameDay);
@@ -58,8 +54,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var dateOptions = { locale: _fr2.default };
 
 var defineds = {
-  lastSevenDays: (0, _endOfDay2.default)((0, _addDays2.default)(new Date(), -6)),
-  lastThirtyDays: (0, _endOfDay2.default)((0, _addDays2.default)(new Date(), -30)),
+  lastSevenDays: (0, _startOfDay2.default)((0, _addDays2.default)(new Date(), -6), dateOptions),
+  lastThirtyDays: (0, _startOfDay2.default)((0, _addDays2.default)(new Date(), -30), dateOptions),
   startOfWeek: (0, _startOfWeek2.default)(new Date(), dateOptions),
   endOfWeek: (0, _endOfWeek2.default)(new Date() + 1, dateOptions),
   startOfLastWeek: (0, _startOfWeek2.default)((0, _addDays2.default)(new Date(), -7), dateOptions),

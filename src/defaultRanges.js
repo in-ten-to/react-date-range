@@ -8,15 +8,14 @@ import {
   startOfWeek,
   endOfWeek,
   isSameDay,
-  differenceInCalendarDays,
 } from 'date-fns';
 
 import fr from 'date-fns/locale/fr';
 const dateOptions = { locale: fr };
 
 const defineds = {
-  lastSevenDays: endOfDay(addDays(new Date(), -6)),
-  lastThirtyDays: endOfDay(addDays(new Date(), -30)),
+  lastSevenDays: startOfDay(addDays(new Date(), -6), dateOptions),
+  lastThirtyDays: startOfDay(addDays(new Date(), -30), dateOptions),
   startOfWeek: startOfWeek(new Date(), dateOptions),
   endOfWeek: endOfWeek(new Date() + 1, dateOptions),
   startOfLastWeek: startOfWeek(addDays(new Date(), -7), dateOptions),
@@ -67,7 +66,8 @@ export const defaultStaticRanges = createStaticRanges([
       startDate: defineds.lastSevenDays,
       endDate: defineds.startOfToday,
     }),
-  },{
+  },
+  {
     label: 'les 30 derniers jours',
     range: () => ({
       startDate: defineds.lastThirtyDays,
@@ -101,7 +101,7 @@ export const defaultStaticRanges = createStaticRanges([
       startDate: defineds.startOfLastMonth,
       endDate: defineds.endOfLastMonth,
     }),
-  }
+  },
 ]);
 
 export const defaultInputRanges = [];
