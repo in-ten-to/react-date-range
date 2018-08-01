@@ -108,16 +108,16 @@ var defaultStaticRanges = exports.defaultStaticRanges = createStaticRanges([{
   label: 'les 7 derniers jours',
   range: function range() {
     return {
-      startDate: defineds.startOfToday,
-      endDate: defineds.lastSevenDays
+      startDate: defineds.lastSevenDays,
+      endDate: defineds.startOfToday
     };
   }
 }, {
   label: 'les 30 derniers jours',
   range: function range() {
     return {
-      startDate: defineds.startOfToday,
-      endDate: defineds.lastThirtyDays
+      startDate: defineds.lastThirtyDays,
+      endDate: defineds.startOfToday
     };
   }
 }, {
