@@ -15,7 +15,7 @@ import fr from 'date-fns/locale/fr';
 const dateOptions = { locale: fr };
 
 const defineds = {
-  lastSevenDays: endOfDay(addDays(new Date(), -7)),
+  lastSevenDays: endOfDay(addDays(new Date(), -6)),
   lastThirtyDays: endOfDay(addDays(new Date(), -30)),
   startOfWeek: startOfWeek(new Date(), dateOptions),
   endOfWeek: endOfWeek(new Date() + 1, dateOptions),

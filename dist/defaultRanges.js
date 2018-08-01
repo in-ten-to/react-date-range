@@ -58,7 +58,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var dateOptions = { locale: _fr2.default };
 
 var defineds = {
-  lastSevenDays: (0, _endOfDay2.default)((0, _addDays2.default)(new Date(), -7)),
+  lastSevenDays: (0, _endOfDay2.default)((0, _addDays2.default)(new Date(), -6)),
   lastThirtyDays: (0, _endOfDay2.default)((0, _addDays2.default)(new Date(), -30)),
   startOfWeek: (0, _startOfWeek2.default)(new Date(), dateOptions),
   endOfWeek: (0, _endOfWeek2.default)(new Date() + 1, dateOptions),
