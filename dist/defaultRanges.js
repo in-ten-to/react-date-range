@@ -105,7 +105,7 @@ var defaultStaticRanges = exports.defaultStaticRanges = createStaticRanges([{
   range: function range() {
     return {
       startDate: defineds.lastSevenDays,
-      endDate: defineds.startOfToday
+      endDate: defineds.endOfToday
     };
   }
 }, {
@@ -113,7 +113,7 @@ var defaultStaticRanges = exports.defaultStaticRanges = createStaticRanges([{
   range: function range() {
     return {
       startDate: defineds.lastThirtyDays,
-      endDate: defineds.startOfToday
+      endDate: defineds.endOfToday
     };
   }
 }, {
