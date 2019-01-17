@@ -55,7 +55,7 @@ var dateOptions = { locale: _fr2.default };
 
 var defineds = {
   lastSevenDays: (0, _startOfDay2.default)((0, _addDays2.default)(new Date(), -6), dateOptions),
-  lastThirtyDays: (0, _startOfDay2.default)((0, _addDays2.default)(new Date(), -29), dateOptions),
+  lastThirtyDays: (0, _startOfDay2.default)((0, _addDays2.default)(new Date(), -30), dateOptions),
   startOfWeek: (0, _startOfWeek2.default)(new Date(), dateOptions),
   endOfWeek: (0, _endOfWeek2.default)(new Date() + 1, dateOptions),
   startOfLastWeek: (0, _startOfWeek2.default)((0, _addDays2.default)(new Date(), -7), dateOptions),

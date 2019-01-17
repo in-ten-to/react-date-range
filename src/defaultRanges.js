@@ -15,7 +15,7 @@ const dateOptions = { locale: fr };
 
 const defineds = {
   lastSevenDays: startOfDay(addDays(new Date(), -6), dateOptions),
-  lastThirtyDays: startOfDay(addDays(new Date(), -29), dateOptions),
+  lastThirtyDays: startOfDay(addDays(new Date(), -30), dateOptions),
   startOfWeek: startOfWeek(new Date(), dateOptions),
   endOfWeek: endOfWeek(new Date() + 1, dateOptions),
   startOfLastWeek: startOfWeek(addDays(new Date(), -7), dateOptions),
