@@ -53,22 +53,24 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var dateOptions = { locale: _fr2.default };
 
-var defineds = {
-  lastSevenDays: (0, _startOfDay2.default)((0, _addDays2.default)(new Date(), -6), dateOptions),
-  lastThirtyDays: (0, _startOfDay2.default)((0, _addDays2.default)(new Date(), -29), dateOptions),
-  startOfWeek: (0, _startOfWeek2.default)(new Date(), dateOptions),
-  endOfWeek: (0, _endOfWeek2.default)(new Date() + 1, dateOptions),
-  startOfLastWeek: (0, _startOfWeek2.default)((0, _addDays2.default)(new Date(), -7), dateOptions),
-  endOfLastWeek: (0, _endOfWeek2.default)((0, _addDays2.default)(new Date() + 1, -7), dateOptions),
-  startOfToday: (0, _startOfDay2.default)(new Date()),
-  endOfToday: (0, _endOfDay2.default)(new Date()),
-  startOfYesterday: (0, _startOfDay2.default)((0, _addDays2.default)(new Date(), -1)),
-  endOfYesterday: (0, _endOfDay2.default)((0, _addDays2.default)(new Date(), -1)),
-  startOfMonth: (0, _startOfMonth2.default)(new Date()),
-  endOfMonth: (0, _endOfMonth2.default)(new Date()),
-  startOfLastMonth: (0, _startOfMonth2.default)((0, _addMonths2.default)(new Date(), -1)),
-  endOfLastMonth: (0, _endOfMonth2.default)((0, _addMonths2.default)(new Date(), -1))
-};
+function defineds() {
+  return {
+    lastSevenDays: (0, _startOfDay2.default)((0, _addDays2.default)(new Date(), -6), dateOptions),
+    lastThirtyDays: (0, _startOfDay2.default)((0, _addDays2.default)(new Date(), -29), dateOptions),
+    startOfWeek: (0, _startOfWeek2.default)(new Date(), dateOptions),
+    endOfWeek: (0, _endOfWeek2.default)(new Date() + 1, dateOptions),
+    startOfLastWeek: (0, _startOfWeek2.default)((0, _addDays2.default)(new Date(), -7), dateOptions),
+    endOfLastWeek: (0, _endOfWeek2.default)((0, _addDays2.default)(new Date() + 1, -7), dateOptions),
+    startOfToday: (0, _startOfDay2.default)(new Date()),
+    endOfToday: (0, _endOfDay2.default)(new Date()),
+    startOfYesterday: (0, _startOfDay2.default)((0, _addDays2.default)(new Date(), -1)),
+    endOfYesterday: (0, _endOfDay2.default)((0, _addDays2.default)(new Date(), -1)),
+    startOfMonth: (0, _startOfMonth2.default)(new Date()),
+    endOfMonth: (0, _endOfMonth2.default)(new Date()),
+    startOfLastMonth: (0, _startOfMonth2.default)((0, _addMonths2.default)(new Date(), -1)),
+    endOfLastMonth: (0, _endOfMonth2.default)((0, _addMonths2.default)(new Date(), -1))
+  };
+}
 
 var staticRangeHandler = {
   range: {},
@@ -88,64 +90,64 @@ var defaultStaticRanges = exports.defaultStaticRanges = createStaticRanges([{
   label: "Aujourd'hui",
   range: function range() {
     return {
-      startDate: defineds.startOfToday,
-      endDate: defineds.endOfToday
+      startDate: defineds().startOfToday,
+      endDate: defineds().endOfToday
     };
   }
 }, {
   label: 'Hier',
   range: function range() {
     return {
-      startDate: defineds.startOfYesterday,
-      endDate: defineds.endOfYesterday
+      startDate: defineds().startOfYesterday,
+      endDate: defineds().endOfYesterday
     };
   }
 }, {
   label: 'les 7 derniers jours',
   range: function range() {
     return {
-      startDate: defineds.lastSevenDays,
-      endDate: defineds.endOfToday
+      startDate: defineds().lastSevenDays,
+      endDate: defineds().endOfToday
     };
   }
 }, {
   label: 'les 30 derniers jours',
   range: function range() {
     return {
-      startDate: defineds.lastThirtyDays,
-      endDate: defineds.endOfToday
+      startDate: defineds().lastThirtyDays,
+      endDate: defineds().endOfToday
     };
   }
 }, {
   label: 'Cette semaine',
   range: function range() {
     return {
-      startDate: defineds.startOfWeek,
-      endDate: defineds.endOfWeek
+      startDate: defineds().startOfWeek,
+      endDate: defineds().endOfWeek
     };
   }
 }, {
   label: 'La semaine dernière',
   range: function range() {
     return {
-      startDate: defineds.startOfLastWeek,
-      endDate: defineds.endOfLastWeek
+      startDate: defineds().startOfLastWeek,
+      endDate: defineds().endOfLastWeek
     };
   }
 }, {
   label: 'Ce mois-ci',
   range: function range() {
     return {
-      startDate: defineds.startOfMonth,
-      endDate: defineds.endOfMonth
+      startDate: defineds().startOfMonth,
+      endDate: defineds().endOfMonth
     };
   }
 }, {
   label: 'Le mois dernier',
   range: function range() {
     return {
-      startDate: defineds.startOfLastMonth,
-      endDate: defineds.endOfLastMonth
+      startDate: defineds().startOfLastMonth,
+      endDate: defineds().endOfLastMonth
     };
   }
 }]);
