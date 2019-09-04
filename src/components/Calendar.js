@@ -259,7 +259,7 @@ class Calendar extends PureComponent {
                 <input
                   disabled={range.disabled}
                   readOnly
-                  value={this.formatDateDisplay(range.startDate, 'Early')}
+                  value={this.formatDateDisplay(range.startDate, 'du début')}
                 />
               </span>
               <span
@@ -270,7 +270,7 @@ class Calendar extends PureComponent {
                 <input
                   disabled={range.disabled}
                   readOnly
-                  value={this.formatDateDisplay(range.endDate, 'Continuous')}
+                  value={this.formatDateDisplay(range.endDate, 'à aujourd\'hui')}
                 />
               </span>
             </div>
