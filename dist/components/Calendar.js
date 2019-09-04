@@ -445,7 +445,7 @@ var Calendar = function (_PureComponent) {
               _react2.default.createElement('input', {
                 disabled: range.disabled,
                 readOnly: true,
-                value: _this4.formatDateDisplay(range.startDate, 'Early')
+                value: _this4.formatDateDisplay(range.startDate, 'du début')
               })
             ),
             _react2.default.createElement(
@@ -458,7 +458,7 @@ var Calendar = function (_PureComponent) {
               _react2.default.createElement('input', {
                 disabled: range.disabled,
                 readOnly: true,
-                value: _this4.formatDateDisplay(range.endDate, 'Continuous')
+                value: _this4.formatDateDisplay(range.endDate, 'à aujourd\'hui')
               })
             )
           );
