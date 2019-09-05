@@ -60,8 +60,8 @@ function calcFocusDate(currentFocusedDate, props) {
       end: date
     };
   }
-  targetInterval.start = (0, _startOfMonth2.default)(targetInterval.start || new Date());
-  targetInterval.end = (0, _endOfMonth2.default)(targetInterval.end || targetInterval.start);
+  targetInterval.start = (0, _startOfMonth2.default)(targetInterval.start || targetInterval.end || new Date());
+  targetInterval.end = (0, _endOfMonth2.default)(targetInterval.end || targetInterval.start || new Date());
   var targetDate = targetInterval.start || targetInterval.end || shownDate || new Date();
 
   // initial focus
