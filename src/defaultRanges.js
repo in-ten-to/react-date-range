@@ -54,6 +54,7 @@ export const defaultStaticRanges = createStaticRanges([
       startDate: defineds().startOfToday,
       endDate: defineds().endOfToday,
     }),
+    id: 'today'
   },
   {
     label: 'Hier',
@@ -61,6 +62,7 @@ export const defaultStaticRanges = createStaticRanges([
       startDate: defineds().startOfYesterday,
       endDate: defineds().endOfYesterday,
     }),
+    id: 'yesterday'
   },
   {
     label: 'les 7 derniers jours',
@@ -68,6 +70,7 @@ export const defaultStaticRanges = createStaticRanges([
       startDate: defineds().lastSevenDays,
       endDate: defineds().endOfToday,
     }),
+    id: 'last_7_days'
   },
   {
     label: 'les 30 derniers jours',
@@ -75,6 +78,7 @@ export const defaultStaticRanges = createStaticRanges([
       startDate: defineds().lastThirtyDays,
       endDate: defineds().endOfToday,
     }),
+    id: 'last_30_days'
   },
   {
     label: 'Cette semaine',
@@ -82,6 +86,7 @@ export const defaultStaticRanges = createStaticRanges([
       startDate: defineds().startOfWeek,
       endDate: defineds().endOfWeek,
     }),
+    id: 'current_week'
   },
   {
     label: 'La semaine dernière',
@@ -89,6 +94,7 @@ export const defaultStaticRanges = createStaticRanges([
       startDate: defineds().startOfLastWeek,
       endDate: defineds().endOfLastWeek,
     }),
+    id: 'last_week'
   },
   {
     label: 'Ce mois-ci',
@@ -96,6 +102,7 @@ export const defaultStaticRanges = createStaticRanges([
       startDate: defineds().startOfMonth,
       endDate: defineds().endOfMonth,
     }),
+    id: 'current_month'
   },
   {
     label: 'Le mois dernier',
@@ -103,6 +110,7 @@ export const defaultStaticRanges = createStaticRanges([
       startDate: defineds().startOfLastMonth,
       endDate: defineds().endOfLastMonth,
     }),
+    id: 'last_month'
   },
 ]);
 
