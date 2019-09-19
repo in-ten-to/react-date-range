@@ -93,7 +93,8 @@ var defaultStaticRanges = exports.defaultStaticRanges = createStaticRanges([{
       startDate: defineds().startOfToday,
       endDate: defineds().endOfToday
     };
-  }
+  },
+  id: 'tonday'
 }, {
   label: 'Hier',
   range: function range() {
@@ -101,7 +102,8 @@ var defaultStaticRanges = exports.defaultStaticRanges = createStaticRanges([{
       startDate: defineds().startOfYesterday,
       endDate: defineds().endOfYesterday
     };
-  }
+  },
+  id: 'yesterday'
 }, {
   label: 'les 7 derniers jours',
   range: function range() {
@@ -109,7 +111,8 @@ var defaultStaticRanges = exports.defaultStaticRanges = createStaticRanges([{
       startDate: defineds().lastSevenDays,
       endDate: defineds().endOfToday
     };
-  }
+  },
+  id: 'last_7_days'
 }, {
   label: 'les 30 derniers jours',
   range: function range() {
@@ -117,7 +120,8 @@ var defaultStaticRanges = exports.defaultStaticRanges = createStaticRanges([{
       startDate: defineds().lastThirtyDays,
       endDate: defineds().endOfToday
     };
-  }
+  },
+  id: 'last_30_days'
 }, {
   label: 'Cette semaine',
   range: function range() {
@@ -125,7 +129,8 @@ var defaultStaticRanges = exports.defaultStaticRanges = createStaticRanges([{
       startDate: defineds().startOfWeek,
       endDate: defineds().endOfWeek
     };
-  }
+  },
+  id: 'current_week'
 }, {
   label: 'La semaine dernière',
   range: function range() {
@@ -133,7 +138,8 @@ var defaultStaticRanges = exports.defaultStaticRanges = createStaticRanges([{
       startDate: defineds().startOfLastWeek,
       endDate: defineds().endOfLastWeek
     };
-  }
+  },
+  id: 'last_week'
 }, {
   label: 'Ce mois-ci',
   range: function range() {
@@ -141,7 +147,8 @@ var defaultStaticRanges = exports.defaultStaticRanges = createStaticRanges([{
       startDate: defineds().startOfMonth,
       endDate: defineds().endOfMonth
     };
-  }
+  },
+  id: 'current_month'
 }, {
   label: 'Le mois dernier',
   range: function range() {
@@ -149,7 +156,8 @@ var defaultStaticRanges = exports.defaultStaticRanges = createStaticRanges([{
       startDate: defineds().startOfLastMonth,
       endDate: defineds().endOfLastMonth
     };
-  }
+  },
+  id: 'last_month'
 }]);
 
 var defaultInputRanges = exports.defaultInputRanges = [];
