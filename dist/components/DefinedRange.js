@@ -56,7 +56,7 @@ var DefinedRanges = function (_Component) {
 
   _createClass(DefinedRanges, [{
     key: 'handleRangeChange',
-    value: function handleRangeChange(range) {
+    value: function handleRangeChange(range, id) {
       var _props = this.props,
           onChange = _props.onChange,
           ranges = _props.ranges,
@@ -64,7 +64,7 @@ var DefinedRanges = function (_Component) {
 
       var selectedRange = ranges[focusedRange[0]];
       if (!onChange || !selectedRange) return;
-      onChange(_defineProperty({}, selectedRange.key || 'range' + (focusedRange[0] + 1), _extends({}, selectedRange, range)));
+      onChange(_defineProperty({}, selectedRange.key || 'range' + (focusedRange[0] + 1), _extends({}, selectedRange, range)), id);
     }
   }, {
     key: 'getSelectedRange',
@@ -109,13 +109,13 @@ var DefinedRanges = function (_Component) {
                 },
                 key: i,
                 onClick: function onClick() {
-                  return _this2.handleRangeChange(staticRange.range(_this2.props));
+                  return _this2.handleRangeChange(staticRange.range(_this2.props), staticRange.id);
                 },
                 onFocus: function onFocus() {
-                  return onPreviewChange && onPreviewChange(staticRange.range(_this2.props));
+                  return onPreviewChange && onPreviewChange(staticRange.range(_this2.props), staticRange.id);
                 },
                 onMouseOver: function onMouseOver() {
-                  return onPreviewChange && onPreviewChange(staticRange.range(_this2.props));
+                  return onPreviewChange && onPreviewChange(staticRange.range(_this2.props), staticRange.id);
                 },
                 onMouseLeave: function onMouseLeave() {
                   _this2.props.onPreviewChange && _this2.props.onPreviewChange();
