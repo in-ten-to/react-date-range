@@ -14,13 +14,13 @@ class DefinedRanges extends Component {
     };
     this.handleRangeChange = this.handleRangeChange.bind(this);
   }
-  handleRangeChange(range) {
+  handleRangeChange(range, id) {
     const { onChange, ranges, focusedRange } = this.props;
     const selectedRange = ranges[focusedRange[0]];
     if (!onChange || !selectedRange) return;
     onChange({
       [selectedRange.key || `range${focusedRange[0] + 1}`]: { ...selectedRange, ...range },
-    });
+    }, id);
   }
   getSelectedRange(ranges, staticRange) {
     const focusedRangeIndex = ranges.findIndex(range => {
@@ -50,10 +50,10 @@ class DefinedRanges extends Component {
                     : null,
                 }}
                 key={i}
-                onClick={() => this.handleRangeChange(staticRange.range(this.props))}
-                onFocus={() => onPreviewChange && onPreviewChange(staticRange.range(this.props))}
+                onClick={() => this.handleRangeChange(staticRange.range(this.props), staticRange.id)}
+                onFocus={() => onPreviewChange && onPreviewChange(staticRange.range(this.props), staticRange.id)}
                 onMouseOver={() =>
-                  onPreviewChange && onPreviewChange(staticRange.range(this.props))
+                  onPreviewChange && onPreviewChange(staticRange.range(this.props), staticRange.id)
                 }
                 onMouseLeave={() => {
                   this.props.onPreviewChange && this.props.onPreviewChange();
@@ -75,7 +75,7 @@ class DefinedRanges extends Component {
                 onChange={e => {
                   let value = parseInt(e.target.value, 10);
                   value = isNaN(value) ? 0 : Math.max(Math.min(99999, value), 0);
-                  this.handleRangeChange(rangeOption.range(value, this.props));
+                  this.handleRangeChange(rangeOption.range(value, this.props), rangeOption.id);
                 }}
                 min={0}
                 max={99999}
