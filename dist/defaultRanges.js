@@ -94,7 +94,7 @@ var defaultStaticRanges = exports.defaultStaticRanges = createStaticRanges([{
       endDate: defineds().endOfToday
     };
   },
-  id: 'tonday'
+  id: 'today'
 }, {
   label: 'Hier',
   range: function range() {
